@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+        115deg,
+        rgba(240, 241, 171, 0.4),
+        rgba(116, 116, 116, 0.4)
+    ),
+    url(yellow-confetti-ribbons-copy-space.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.container h1 {
+    font-family: "Jua", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #d000ff;
+}
+/*  */
+#birthdayDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#bomb {
+    display: none;
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10vw;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: dropBomb 2s linear forwards;
+    font-family: "Jua", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #d000ff;
+}
+
+.bomb img {
+    width: 25%;
+    border-radius: 100cm;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-top: 30px;
+}
+
+.btn {
+    font-size: 40px;
+    font-family: "Jua", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #d000ff;
+    border: none;
+}
+
+#yesButton {
+    padding: 10px 40px;
+    color: white;
+    box-shadow: 2px 2px #d000ff;
+    border: none;
+    border-radius: 15px
+}
+
+#noButton {
+    padding: 10px 45px;
+    color: white;
+    box-shadow: 2px 2px #d000ff;
+    border: none;
+    border-radius: 15px
+}
+
+.btn:hover, .menu-btn:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    cursor: pointer
+}
+
+#main-menu-container{
+    display: none;
+    transform: scale(0);
+    opacity: 0;
+}
+
+#main-menu-container h1 {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-family: "Jua", sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px #d000ff;
+    font-size: 40px;
+}
+
+#split-container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+}
+
+#left-split {
+    width: 40%;
+    padding-top: 20px;
+}
+
+#center-split {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-split {
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+}
+
+#center-split img {
+    width: 85%;
+    border-radius: 1cm;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Jua", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #d000ff;
+    font-weight: bold;
+    font-size: 35px
+}
+
+#note-container, #menu-options {
+    display: flex;
+    width: 100%;
+    height: 88%;
+    justify-content: center;
+    align-items: center;
+}
+
+#note {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px 0 25px;
+    margin-top: 20px;
+    border-radius: 1cm;
+    background-color: rgba(128, 128, 128, 0.4);
+    font-family: "Radio Canada", sans-serif;
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px #d000ff;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#menu-options {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 0 30px;
+    margin-top: 10px;
+    height: 92%;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 1cm;
+}
+
+span {
+    padding: 0 10px;
+}
+
+.icon {
+    width: 45px;
+}
+
+.option {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.option:nth-child(2), .option:nth-child(4) {
+    justify-content: end;
+}
+
+.menu-btn {
+    width: 70%;
+    border: none;
+    border-radius: 10cm;
+    padding: 15px;
+    font-size: 19px;
+    background-color: #d000ff;
+    font-family: "Jua", sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.option:nth-child(2) .menu-btn, .option:nth-child(4) .menu-btn {
+    justify-content: end;
+}
+
+@keyframes dropBomb {
+    from {
+        top: -200px;
+    }
+    to {
+        top: 70%;
+    }
+}
+
+@keyframes shrinkAndFade {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes enlargeAndDisplay {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

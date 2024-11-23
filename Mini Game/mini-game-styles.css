@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    background-image: linear-gradient(
+        115deg,
+        rgba(240, 241, 171, 0.4),
+        rgba(116, 116, 116, 0.4)
+    ),
+    url(https://img.freepik.com/free-vector/eye-catching-shiny-electric-lines-trendy-background-design_1017-50905.jpg?t=st=1732263191~exp=1732266791~hmac=5fa87357db25dfa233f9f0450a19ab18801003853eac9d1c4864ed80a7d2a908&w=826);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Jua", sans-serif;
+    color: #0070ba;
+    text-shadow: 2px 2px white;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    font-family: "Radio Canada", serif;
+    color: white;
+    text-shadow: 2px 2px #0070ba;
+    font-weight: bold;
+}
+
+#start-game-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0070ba;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+#start-game-btn:hover {
+    background-color: #005086;
+    transform: scale(1.05);
+    transition: 0.3 ease-in-out;
+}
+
+.cups-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.cup {
+    width: 100px;
+    height: 150px;
+    background-image: url(Manasvi\ pics/e59d2db3-7c3d-4a0a-ac38-311c37971cc7.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: transform 0.3s ease, bottom 0.3s ease;
+    border: 2px solid white;
+}
+
+.cup.lifted {
+    bottom: -100px;
+}
+
+.ball {
+    width: 30px;
+    height: 30px;
+    background-color: #0099ff;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    display: none;
+}
+
+.hidden-ball {
+    display: block;
+}
+
+#result {
+    font-size: 1.2rem;
+    font-family: "Radio Canada", serif;
+    color: white;
+    text-shadow: 2px 2px #0070ba;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#timer {
+    font-size: 18px;
+    font-family: "Radio Canada", serif;
+    color: white;
+    text-shadow: 2px 2px #0070ba;
+    font-weight: bold;
+}
+
+#game {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}

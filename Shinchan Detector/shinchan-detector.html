@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinchan Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shinchan Detector</h1>
+    <p>Upload an image to see if it's "Shinchan" or "Also Shinchan."</p>
+
+    <input type="file" id="imageInput" accept="image/*">
+    <button id="predictButton">Predict</button>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("predictButton").addEventListener("click", async () => {
+            const imageInput = document.getElementById("imageInput");
+            const resultDiv = document.getElementById("result");
+
+            if (!imageInput.files[0]) {
+                resultDiv.textContent = "Please select an image!";
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", imageInput.files[0]);
+
+            try {
+                resultDiv.textContent = "Predicting...";
+                const response = await fetch("http://127.0.0.1:5000/predict", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    resultDiv.textContent = `Error: ${errorData.error}`;
+                    return;
+                }
+
+                const data = await response.json();
+                resultDiv.textContent = `Prediction: ${data.result} (Confidence: ${(data.confidence * 100).toFixed(2)}%)`;
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        115deg,
+        rgba(240, 241, 171, 0.3),
+        rgba(116, 116, 116, 0.3)
+    ),
+    url(https://img.freepik.com/premium-photo/star-shaped-silver-sequins-blue-background-copy-space_113956-304.jpg?w=740);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.gallery-container {
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 3rem;
+    font-family: "Jua", sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #000000;
+}
+
+.gallery-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.carousel-container {
+    width: 100%; 
+}
+
+#carousel {
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.carousel-images img {
+    font-family: "Jua", sans-serif;
+    color: white;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
+
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* width: 50px; */
+    text-align: center;
+    border-radius: 2cm;
+}
+
+.carousel-button:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.thumbnails-container {
+    width: 40%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.thumbnails-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+    display: none;
+    background: transparent;
+}
