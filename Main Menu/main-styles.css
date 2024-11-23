@@ -148,6 +148,7 @@ body {
 #center-split img {
     width: 85%;
     border-radius: 1cm;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 h2 {
@@ -193,6 +194,7 @@ h2 {
     height: 92%;
     background-color: rgba(128, 128, 128, 0.4);
     border-radius: 1cm;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 span {
