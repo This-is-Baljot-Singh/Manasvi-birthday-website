@@ -20,7 +20,7 @@ yesButton.addEventListener("click", () => {
     let countdown = 5;
     const interval = setInterval(() => {
         countdown--;
-        bomb.innerHTML = `<img src="sabar karo.jpeg"> ${countdown}...`;
+        bomb.innerHTML = `<img src="../Assets/sabar karo.jpeg"> ${countdown}...`;
         if (countdown === 0) {
             clearInterval(interval);
             bomb.style.display = "none";
@@ -36,9 +36,9 @@ yesButton.addEventListener("click", () => {
 });
 
 galleryBtn.addEventListener("click", () => {
-    window.open("gallery.html", "_blank");
+    window.open("../Gallery/gallery.html", "_blank");
 });
 
 gameBtn.addEventListener("click", () => {
-    window.open("mini-game.html", "_blank");
+    window.open("../Mini%20Game/mini-game.html", "_blank");
 });

@@ -10,7 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     if (validNames.includes(name) && password === validPassword) {
         alert(`Welcome, ${name}!`);
-        window.location.href = "main.html";
+        window.location.href = "../Main%20Menu/main.html";
     } else {
         errorMessage.style.display = "block";
         errorMessage.textContent = "Invalid name or password. Please try again.";

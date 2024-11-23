@@ -11,7 +11,7 @@ body {
         rgba(240, 241, 171, 0.4),
         rgba(116, 116, 116, 0.4)
     ),
-    url(yellow-confetti-ribbons-copy-space.jpg);
+    url(../Assets/yellow-confetti-ribbons-copy-space.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
