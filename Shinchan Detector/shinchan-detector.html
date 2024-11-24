@@ -3,60 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shinchan Detector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 20px;
-        }
-    </style>
+    <title>Shinchan Akinator Game</title>
+    <link rel="stylesheet" href="shinchan-detector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Princess+Sofia&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Shinchan Detector</h1>
-    <p>Upload an image to see if it's "Shinchan" or "Also Shinchan."</p>
+    <div class="container">
+        <div id="intro-box">
+            <h1>Are You Shinchan?</h1>
+            <p id="game-intro">
+                Welcome to the Shinchan Detector Game! This fun quiz will ask you 8 random questions to determine whether you are like Shinchan.
+                Mischievous, funny, and full of energy—do you think you can match his personality? Click "Start Game" to begin!
+            </p>
+            <button id="start-game-btn">Start Game</button>
+        </div>
 
-    <input type="file" id="imageInput" accept="image/*">
-    <button id="predictButton">Predict</button>
+        <div id="question-box" class="hidden">
+            <p id="question"></p>
+            <div id="buttons">
+                <button id="yes-btn">Yes</button>
+                <button id="no-btn">No</button>
+            </div>
+        </div>
 
-    <div id="result"></div>
-
-    <script>
-        document.getElementById("predictButton").addEventListener("click", async () => {
-            const imageInput = document.getElementById("imageInput");
-            const resultDiv = document.getElementById("result");
-
-            if (!imageInput.files[0]) {
-                resultDiv.textContent = "Please select an image!";
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append("file", imageInput.files[0]);
-
-            try {
-                resultDiv.textContent = "Predicting...";
-                const response = await fetch("http://127.0.0.1:5000/predict", {
-                    method: "POST",
-                    body: formData
-                });
-
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    resultDiv.textContent = `Error: ${errorData.error}`;
-                    return;
-                }
-
-                const data = await response.json();
-                resultDiv.textContent = `Prediction: ${data.result} (Confidence: ${(data.confidence * 100).toFixed(2)}%)`;
-            } catch (error) {
-                resultDiv.textContent = `Error: ${error.message}`;
-            }
-        });
-    </script>
+        <div id="result-box" class="hidden">
+            <h2 id="result"></h2>
+            <p id="reason"></p>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="shinchan-detector.js"></script>
 </body>
 </html>

@@ -44,7 +44,7 @@ body {
     align-items: center;
 }
 
-#bomb {
+#timer {
     display: none;
     position: absolute;
     top: -500px;
@@ -60,7 +60,7 @@ body {
     text-shadow: 2px 2px #d000ff;
 }
 
-.bomb img {
+.timer img {
     width: 25%;
     border-radius: 100cm;
 }
@@ -75,25 +75,12 @@ body {
 .btn {
     font-size: 40px;
     font-family: "Jua", sans-serif;
-    color: white;
-    text-shadow: 2px 2px #d000ff;
-    border: none;
-}
-
-#yesButton {
-    padding: 10px 40px;
-    color: white;
-    box-shadow: 2px 2px #d000ff;
-    border: none;
-    border-radius: 15px
-}
-
-#noButton {
+    color: rgb(208, 0, 255);
+    text-shadow: 2px 2px white;
     padding: 10px 45px;
-    color: white;
-    box-shadow: 2px 2px #d000ff;
     border: none;
-    border-radius: 15px
+    border-radius: 10px;
+    box-shadow: rgba(208, 0, 255, 0.54) 0px 3px 8px;
 }
 
 .btn:hover, .menu-btn:hover {
@@ -234,6 +221,89 @@ span {
     justify-content: end;
 }
 
+.timer img {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#lockscreen {
+    height: fit;
+    width: 20vw;
+    background-color: rgba(208, 0, 255, 0.7);
+    border-radius: 1cm;
+    position: absolute;
+    top: 80%;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: bold;
+    transform: translateY(35vh);
+    opacity: 0;
+}
+
+header {
+    font-family: "Jua", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #d000ff;
+    font-size: 20px;
+}
+
+#lockscreen input {
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #d000ff;
+}
+
+#lockscreen input:focus {
+    outline: none;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+#password-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#password-btns button {
+    background-color: white;
+    border: none;
+    width: 30%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #d000ff;
+    font-family: "Radio Canada", sans-serif;
+    font-weight: bold;
+}
+
+#password-btns button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+#message {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 @keyframes dropBomb {
     from {
         top: -200px;
@@ -262,5 +332,27 @@ span {
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes lockscreenAppear {
+    from {
+        transform: translateY(25vh);
+        opacity: 0;
+    } 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes lockscreenDisappear {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(25vh);
+        opacity: 0;
     }
 }
