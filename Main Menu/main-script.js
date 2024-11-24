@@ -12,7 +12,7 @@ const cancelBtn = document.getElementById('cancel-btn');
 const enterBtn = document.getElementById('enter-btn');
 const password = document.getElementById("password");
 const message = document.getElementById("message");
-const validPassword = "Kaide Se Manasvi 19"; 
+const validPassword = "KaideSeManasvi19"; 
 
 noButton.addEventListener("click", () => {
     const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
@@ -51,7 +51,7 @@ gameBtn.addEventListener("click", () => {
     window.open("../Mini%20Game/mini-game.html", "_blank");
 });
 
-gameBtn.addEventListener("click", () => {
+detectorBtn.addEventListener("click", () => {
     window.open("../Shinchan%20Detector/shinchan-detector.html", "_blank");
 });
 

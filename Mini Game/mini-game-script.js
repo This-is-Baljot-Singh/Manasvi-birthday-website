@@ -4,7 +4,7 @@ const timerDiv = document.getElementById('timer');
 const startGameBtn = document.getElementById('start-game-btn');
 const shuffleDuration = 8000;
 const interval = 300;
-const password = "SECRET2024";
+const password = "KaideSeManasvi19";
 let ballPosition;
 let currentPositions = [0, 1, 2];
 
